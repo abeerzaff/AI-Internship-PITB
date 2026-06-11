@@ -1,0 +1,7 @@
+Ali,90
+Sara,80
+Ahmed,70
+Raza,90
+Waheed,78
+Lala,78
+Sarbuland,89
