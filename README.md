@@ -7,8 +7,11 @@ This repository documents my learning journey throughout the AI Internship Progr
 
 
 Internship orientation completed
+
 Learning roadmap prepared
+
 GitHub repository created
+
 AI learning goals defined
 
 #WEEK-02
