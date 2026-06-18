@@ -16,3 +16,8 @@ AI learning goals defined
 #WEEK-02
 
 In week-02 I have  revised Python fundamentals , practiced Lists, Tuples, Dictionaries . Implemented File Handling and CSV Handling and practiced Exception Handling.And for  the weekly  task I had built Student Performance Summary program and  Data Analyze program which analyze data and give important information about data like total number of rows and columns , column names and missing values. I had also built a mini utility called Data Health Checker  which inspects and analyze data.
+
+
+#WEEK-03
+
+In Week 03, I worked on a real-world dataset where I performed several data cleaning steps. After cleaning the data, I conducted Exploratory Data Analysis (EDA). Through EDA, I learned how to analyze and visualize data and how to convert raw data into meaningful insights.
