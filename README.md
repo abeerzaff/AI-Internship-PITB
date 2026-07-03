@@ -24,4 +24,4 @@ In Week 03, I worked on a real-world dataset where I performed several data clea
 
 ##WEEK-04
 
-This project is the Week 04 submission for the Data Visualization and Dashboard Thinking assignment. The goal was to take the cleaned Netflix dataset from Week 3 and turn it into a set of visual stories that help identify trends, compare categories, and uncover patterns in the data, and then present those findings in a way that actually supports decision-making rather than just showing code output
+This project is my Week 04 Data Visualization and Dashboard Thinking assignment. In this project, I used the cleaned Netflix dataset from Week 03 to create different visualizations that help identify trends, compare categories, and analyze patterns in the data. I also developed an interactive Streamlit dashboard to present these insights in a clear and user-friendly way, making it easier to understand the data and support better decision-making.
