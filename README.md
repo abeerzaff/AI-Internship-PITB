@@ -21,3 +21,7 @@ In week-02 I have  revised Python fundamentals , practiced Lists, Tuples, Dictio
 #WEEK-03
 
 In Week 03, I worked on a real-world dataset where I performed several data cleaning steps. After cleaning the data, I conducted Exploratory Data Analysis (EDA). Through EDA, I learned how to analyze and visualize data and how to convert raw data into meaningful insights.
+
+##WEEK-04
+
+This project is the Week 04 submission for the Data Visualization and Dashboard Thinking assignment. The goal was to take the cleaned Netflix dataset from Week 3 and turn it into a set of visual stories that help identify trends, compare categories, and uncover patterns in the data, and then present those findings in a way that actually supports decision-making rather than just showing code output
