@@ -53,3 +53,7 @@ Install the required dependencies- pip install streamlit pandas numpy matplotlib
 
 Run the app- streamlit run app.py
 
+
+##week-05
+
+This assignment focused on learning the fundamentals of Large Language Models (LLMs) and applying prompt engineering techniques to generate better AI responses. Different prompt versions—Basic, Improved, and Professional—were created for eight real-world use cases. The outputs were compared to understand how adding clear instructions, context, constraints, and structure improves the quality, accuracy, and reliability of AI-generated content. This assignment strengthened my understanding of effective prompt design and response evaluation.
