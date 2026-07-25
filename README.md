@@ -57,3 +57,19 @@ Run the app- streamlit run app.py
 ##week-05
 
 This assignment focused on learning the fundamentals of Large Language Models (LLMs) and applying prompt engineering techniques to generate better AI responses. Different prompt versions Basic, Improved, and Professional were created for eight real-world use cases. The outputs were compared to understand how adding clear instructions, context, constraints, and structure improves the quality, accuracy, and reliability of AI-generated content. This assignment strengthened my understanding of effective prompt design and response evaluation.
+
+
+
+
+##WEEK-06
+
+This assignment focuses on understanding the practical applications of Generative AI by designing real-world AI use cases. The main objective is to learn how AI can be used to solve everyday problems, especially in public-sector workflows, while understanding its capabilities, limitations, and responsible use.
+
+In this assignment, I created five practical Generative AI use cases:
+- AI Email Assistant
+- AI Report Summarizer
+- AI Meeting Notes Generator
+- AI Document Q&A Assistant
+- AI Idea Generator for Public Services
+
+For each use case, I explained the problem statement, target users, required inputs, AI process, expected outputs, limitations, and possible improvements. I also prepared a concept note, a use case table, and prompt examples to demonstrate how Generative AI can be applied effectively in real-world scenarios.
