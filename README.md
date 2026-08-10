@@ -73,3 +73,32 @@ In this assignment, I created five practical Generative AI use cases:
 - AI Idea Generator for Public Services
 
 For each use case, I explained the problem statement, target users, required inputs, AI process, expected outputs, limitations, and possible improvements. I also prepared a concept note, a use case table, and prompt examples to demonstrate how Generative AI can be applied effectively in real-world scenarios.
+
+
+##WEEK 7
+
+Environment Setup
+
+This project was built and run inside a Python virtual environment (venv) to keep dependencies isolated from the system Python installation.
+
+python3 -m venv .venv
+
+# macOS / Linux
+source .venv/bin/activate
+
+# Windows
+.venv\Scripts\activate
+
+Install dependencies
+
+pip install sentence-transformers chromadb torch
+
+
+### Dependency Conflicts
+
+During the setup, I faced some package version compatibility issues. After adjusting the package versions, the environment worked correctly.
+
+
+## Project Overview 
+
+This project builds a small semantic search system that retrieves document chunks based on meaning rather than exact keyword matching. It loads three sample documents, splits them into chunks, generates embeddings for each chunk using a sentence-transformer model, stores them in ChromaDB, and allows a user to ask a question and retrieve the most relevant chunks. A basic keyword search was also built to compare traditional word-matching against semantic retrieval.
