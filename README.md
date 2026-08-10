@@ -84,12 +84,14 @@ This project was built and run inside a Python virtual environment (venv) to kee
 python3 -m venv .venv
 
 ##macOS / Linux
+
 source .venv/bin/activate
 
 ##Windows
+
 .venv\Scripts\activate
 
-Install dependencies
+##Install dependencies
 
 pip install sentence-transformers chromadb torch
 
