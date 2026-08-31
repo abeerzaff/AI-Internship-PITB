@@ -26,7 +26,7 @@ if not GEMINI_API_KEY:
     )
 
 # Gemini model that you already tested successfully
-GEMINI_MODEL = "gemini-3.7-flash"
+GEMINI_MODEL = "gemini-3.6-flash"
 
 # Embedding model from the assignment
 EMBEDDING_MODEL = "all-MiniLM-L6-v2"
