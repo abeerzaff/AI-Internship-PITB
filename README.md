@@ -105,3 +105,40 @@ During the setup, I faced some package version compatibility issues. After adjus
 ##Project Overview 
 
 This project builds a small semantic search system that retrieves document chunks based on meaning rather than exact keyword matching. It loads three sample documents, splits them into chunks, generates embeddings for each chunk using a sentence-transformer model, stores them in ChromaDB, and allows a user to ask a question and retrieve the most relevant chunks. A basic keyword search was also built to compare traditional word-matching against semantic retrieval.
+
+
+##WEEK-08
+
+Professional RAG PDF Assistant
+
+ Retrieval- Augmented Generation (RAG) chatbot that lets a user upload a PDF, ask questions about its
+contents, and get source-grounded answers — with an explicit fallback when the answer isn't in the
+document, so the system never fabricates information.
+
+##Setup
+
+Clone the repo and create a virtual environment
+
+   git clone <repo-url>
+   
+   cd AI-Internship-PITB
+   
+   python3 -m venv .venv
+   
+   source .venv/bin/activate
+   
+Install dependencies
+
+   pip install -r requirements.txt
+
+   
+Add your Gemini API key Create a .env file in the project root:
+
+   GEMINI_API_KEY=your_api_key_here
+
+   How to Run
+
+Gradio app (interactive UI):
+
+
+python rag.py
