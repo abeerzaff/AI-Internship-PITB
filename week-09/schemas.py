@@ -1,7 +1,3 @@
-"""Pydantic models defining request/response JSON shapes for each endpoint."""
-
-
-
 
 from pydantic import BaseModel, Field, field_validator
 
@@ -35,14 +31,14 @@ class QARequest(BaseModel):
 class QAResponse(BaseModel):
     answer: str
     sources: list[str]
-    answer_source: str  # "document" (from uploaded PDFs) or "general_knowledge" (plain LLM answer)
+    answer_source: str 
     status: str = "success"
 
 
 class UploadResponse(BaseModel):
     filename: str
     chunks_stored: int
-    extraction_method: str  # "native" (text layer) or "ocr" (scanned/image PDF)
+    extraction_method: str  
     status: str = "success"
 
 
