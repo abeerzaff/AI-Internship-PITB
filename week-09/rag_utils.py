@@ -1,9 +1,3 @@
-"""
-RAG utilities: PDF text extraction, chunking, embeddings, ChromaDB storage,
-and retrieval. This reuses the pipeline built in Assignment 8
-(Professional RAG PDF Assistant), now exposed for API use instead of a
-Gradio interface.
-"""
 
 import os
 import uuid
@@ -11,22 +5,15 @@ import numpy as np
 import chromadb
 from sentence_transformers import SentenceTransformer
 from pypdf import PdfReader
-import pymupdf  # PDF page rendering — pure pip install, no poppler/brew needed
-import easyocr  # OCR engine — pure pip install (PyTorch-based), no tesseract/brew needed
-
+import pymupdf  
+import easyocr  
 import config
 
-# Load embedding model once at import time (expensive to reload per request)
 embedding_model = SentenceTransformer(config.EMBEDDING_MODEL)
 
-# Persistent ChromaDB client
 chroma_client = chromadb.PersistentClient(path=config.CHROMA_DB_PATH)
 collection = chroma_client.get_or_create_collection(name=config.COLLECTION_NAME)
 
-
-# EasyOCR reader is loaded once, lazily, on first use — it's the slow/heavy
-# part (loads a neural network), so we don't want to pay that cost on every
-# single upload, only once per server run.
 _ocr_reader = None
 
 
@@ -48,16 +35,7 @@ def _extract_text_native(file_path: str) -> str:
 
 
 def _extract_text_ocr(file_path: str) -> str:
-    """
-    OCR fallback for scanned/image-based PDFs — no system binaries required.
-
-    PyMuPDF renders each PDF page directly to a pixel image in-process (it
-    has its own built-in rendering engine, so unlike pdf2image it does not
-    need poppler installed on the machine). EasyOCR then reads the text out
-    of each rendered image; it ships its own neural OCR model via pip, so it
-    does not need the Tesseract binary installed either. Net effect: the
-    whole OCR pipeline is `pip install` only, nothing to build with Homebrew.
-    """
+  
     doc = pymupdf.open(file_path)
     reader = _get_ocr_reader()
     text = ""
@@ -73,13 +51,7 @@ def _extract_text_ocr(file_path: str) -> str:
 
 
 def extract_text_from_pdf(file_path: str) -> tuple[str, str]:
-    """
-    Extract text from a PDF file, automatically falling back to OCR when the
-    PDF has no real text layer (scanned/image-based).
-
-    Returns (text, method) where method is "native" or "ocr", so callers/
-    API responses can report which path was used.
-    """
+ 
     text = _extract_text_native(file_path)
 
     if len(text.strip()) >= 20:
@@ -113,11 +85,7 @@ def chunk_text(text: str, chunk_size: int = None, overlap: int = None) -> list[s
 
 
 def process_and_store_document(file_path: str, doc_name: str) -> dict:
-    """
-    Full ingestion pipeline: extract (native or OCR) -> chunk -> embed ->
-    store in ChromaDB. Returns a dict with chunk count and which extraction
-    method was used, so the API can report it back to the caller.
-    """
+   
     text, method = extract_text_from_pdf(file_path)
     chunks = chunk_text(text)
 

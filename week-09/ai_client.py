@@ -1,8 +1,3 @@
-"""
-Gemini AI client wrapper — handles summarization and RAG-based question
-answering, with retry/backoff for transient errors (429/503), same pattern
-used in Assignment 8.
-"""
 
 import time
 from google import genai
@@ -46,16 +41,7 @@ def summarize_text(text: str, max_length: int = 150) -> str:
 
 
 def answer_question(question: str, context: str) -> dict:
-    """
-    Answer a question, preferring uploaded-document context (RAG) but
-    falling back to the model's own general knowledge when the context is
-    empty or doesn't actually contain the answer — instead of refusing.
-
-    Returns {"answer": str, "answer_source": "document" | "general_knowledge"}.
-    The model is asked to self-report which source it used, via a small
-    tag we parse out, so the label reflects what actually happened rather
-    than just "were any chunks retrieved".
-    """
+  
     if not context.strip():
         prompt = (
             "No documents have been uploaded, so there is no document context "
@@ -93,6 +79,4 @@ def _parse_sourced_answer(raw: str, has_context: bool) -> dict:
     if text.startswith("[SOURCE: GENERAL_KNOWLEDGE]"):
         return {"answer": text[len("[SOURCE: GENERAL_KNOWLEDGE]"):].strip(), "answer_source": "general_knowledge"}
 
-    # Model didn't include the tag (rare) — default to "document" since
-    # context was available, but don't fail the request over formatting.
     return {"answer": text, "answer_source": "document"}

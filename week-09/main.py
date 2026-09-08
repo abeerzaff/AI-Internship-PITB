@@ -1,17 +1,3 @@
-"""
-AI Assistant Backend API
-Assignment 9 — AI Product Development and Final Delivery
-
-Endpoints:
-  GET  /                -> Home
-  GET  /health           -> Health check
-  POST /summarize        -> Text summarization
-  POST /ask               -> Question answering (RAG-based, over uploaded docs)
-  POST /upload            -> Document upload (PDF ingestion into ChromaDB)
-
-Run with:
-  uvicorn main:app --reload
-"""
 
 import os
 import shutil
@@ -38,7 +24,6 @@ app = FastAPI(
     version="1.0.0",
 )
 
-# Allow local frontend/Postman testing without CORS issues
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -111,11 +96,7 @@ def ask_question(request: QARequest):
 
 @app.post("/upload", response_model=UploadResponse, tags=["AI"])
 async def upload_document(file: UploadFile = File(...)):
-    """
-    Upload a PDF document. The file is saved, text is extracted (falling
-    back to OCR automatically if the PDF is scanned/image-based), chunked,
-    embedded, and stored in ChromaDB so it can later be queried via /ask.
-    """
+  
     if not file.filename.lower().endswith(".pdf"):
         raise HTTPException(status_code=400, detail="Only PDF files are supported.")
 
