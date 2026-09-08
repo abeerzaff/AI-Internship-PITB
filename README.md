@@ -142,3 +142,18 @@ Gradio app (interactive UI):
 
 
 python rag.py
+
+
+##week-09
+
+A FastAPI backend exposing text summarization, RAG-based question answering, and PDF document upload as REST endpoints. Built on ChromaDB + Gemini, with automatic OCR fallback for scanned PDFs.
+
+Setup
+bash
+git clone 
+cd week-09
+python3 -m venv .venv
+source .venv/bin/activate      # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+cp .env           # add your GEMINI_API_KEY
+uvicorn main:app --reload
